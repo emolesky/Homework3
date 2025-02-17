@@ -6,20 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SmallerNum
+namespace HowMany
 {
     public class Calculator
     {
-        public string SmallestNum(string num1, string num2)
+        public int CountDs(string sentence)
         {
-            if (num1.Length < num2.Length)
-            {
-                return num1;
-            }
-            if (num1.Length > num2.Length)
-            {
-                return num2;
-            }
-            return (string.Compare(num1, num2) <= 0) ? num1 : num2;
+            return sentence.Count(c => char.ToLower(c) == 'd');
         }
 }
