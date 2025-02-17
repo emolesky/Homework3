@@ -1,19 +1,33 @@
-﻿namespace ArrayOfIntegers
-{
-    internal class Program
-    {
-        static void Main(string[] args)
-        {
-            Calculator aCalculator = new Calculator();
-            int[] arr1 = { 2, -1, 4, 8, 10 };
-            int[] arr2 = { -3, -4, -10, -2, -3 };
-            int[] arr3 = { 2, 4, 6, 8, 10 };
-            int[] arr4 = { -1 };
+﻿
 
-            Console.WriteLine(aCalculator.GetAbsSum(arr1));
-            Console.WriteLine(aCalculator.GetAbsSum(arr2));
-            Console.WriteLine(aCalculator.GetAbsSum(arr3));
-            Console.WriteLine(aCalculator.GetAbsSum(arr4));
+namespace BiggestandSmallest
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            List<int> aList = new List<int> { 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 };
+
+            Calculator aCalculator = new Calculator();
+
+            int minimum = aCalculator.FindMin(aList);
+            int maximum = aCalculator.FindMax(aList);
+
+            Console.WriteLine( minimum);
+            Console.WriteLine(maximum);
         }
+        
+            
+        
     }
+
 }
+
+
+
+
+
+
+
+
+
