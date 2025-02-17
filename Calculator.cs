@@ -1,4 +1,4 @@
-﻿//Emilynn Molesky
+﻿//Written By Emilynn Molesky
 //2/15/2025
 using System;
 using System.Collections.Generic;
@@ -6,12 +6,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HowMany
+namespace MultiByLength
 {
     public class Calculator
     {
-        public int CountDs(string sentence)
+        public int[] MultiByLength(int[] numbers)
         {
-            return sentence.Count(c => char.ToLower(c) == 'd');
+            int length = numbers.Length;
+            int[] result = new int[length];
+
+            for (int i = 0; i < length; i++)
+            {
+                result[i] = numbers[i] * length;
+
+            }
+            return result;
         }
 }
