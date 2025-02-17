@@ -1,4 +1,4 @@
-﻿namespace VinFletchers
+﻿namespace VinFletcher2
 {
     internal class Program
     {
@@ -15,7 +15,7 @@
             Console.WriteLine("Enter shaft length (60-100 cm):");
             float length = float.Parse(Console.ReadLine());
 
-            Arrow aArrow = new Arrow(arrowhead, fletching, length );
+            Arrow aArrow = new Arrow(arrowhead, fletching, length);
             aArrow.ShowInfo();
         }
     }
