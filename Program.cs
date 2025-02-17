@@ -1,34 +1,14 @@
-﻿namespace SimulasTest
+﻿namespace SimulasSoup
 {
     public class Program
     {
-        public static void Main(string[] args) 
+        static void Main(string[] args)
         {
-            Chest aChest = new Chest ();
-            while (true)
-            {
-                Console.WriteLine($"The Chest is {aChest.State}. What do you want to do?");
-                string command = Console.ReadLine()?.ToLower();
+            Console.WriteLine(" Welcome to Simulas Soup Maker!");
 
-                switch (command)
-                {
-                    case "open":
-                        aChest.Open();
-                        break;
-                    case "close":
-                        aChest.Close();
-                        break;
-                    case "lock":
-                        aChest.Lock();
-                        break;
-                    case "unlock":
-                        aChest.Unlock();
-                        break;
-                    case "exit":
-                        Console.WriteLine("Exiting...");
-                        break;
-                }
-            }
+            var soup = Recipes.CreateSoup();
+
+            Console.WriteLine($"\n You made a {soup.Item3} {soup.Item2} {soup.Item1}.");
         }
     }
 }
