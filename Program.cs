@@ -1,4 +1,4 @@
-﻿namespace HowMany
+﻿namespace SmallerNum
 {
     internal class Program
     {
@@ -6,9 +6,11 @@
         {
             Calculator aCalculator = new Calculator();
 
-            Console.WriteLine(aCalculator.CountDs(" My friend Dylan got distracted in school"));
-            Console.WriteLine(aCalculator.CountDs("Debris was scattered all over the yard"));
-            Console.WriteLine(aCalculator.CountDs("The rodents hibernated in their den"));
+            Console.WriteLine(aCalculator.SmallestNum("21", "44"));
+            Console.WriteLine(aCalculator.SmallestNum("1500", "1"));
+            Console.WriteLine(aCalculator.SmallestNum("5", "5"));
+            Console.WriteLine(aCalculator.SmallestNum("123", "456"));
+            Console.WriteLine(aCalculator.SmallestNum("100", "99"));
         }
     }
 }
