@@ -1,33 +1,22 @@
-﻿
-
-namespace BiggestandSmallest
+﻿namespace VinFletchers
 {
-    public class Program
+    internal class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
-            List<int> aList = new List<int> { 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 };
+            Console.WriteLine("Choose an Arrowhead type ( Steel, Wood, Obsidian):");
+            string arrowheadInput = Console.ReadLine();
+            ArrowheadType arrowhead = Enum.Parse<ArrowheadType>(arrowheadInput, true);
 
-            Calculator aCalculator = new Calculator();
+            Console.WriteLine("Choose an Fletching type ( Plastic, TurkeyFeathers, GooseFeathers)");
+            string fletchingInput = Console.ReadLine();
+            FletchingType fletching = Enum.Parse<FletchingType>(fletchingInput, true);
 
-            int minimum = aCalculator.FindMin(aList);
-            int maximum = aCalculator.FindMax(aList);
+            Console.WriteLine("Enter shaft length (60-100 cm):");
+            float length = float.Parse(Console.ReadLine());
 
-            Console.WriteLine( minimum);
-            Console.WriteLine(maximum);
+            Arrow aArrow = new Arrow(arrowhead, fletching, length );
+            aArrow.ShowInfo();
         }
-        
-            
-        
     }
-
 }
-
-
-
-
-
-
-
-
-

@@ -1,76 +1,76 @@
-﻿//Emilynn Molesky 
-//2/15/2025
+﻿//Emilynn Molesky
+//2/11/2025
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VinFletcher2
+namespace VinFletchers
 {
     enum ArrowheadType { Steel, Wood, Obsidian }
-    enum FletchingType { Plastic, TurkeyFeathers, GooseFeathers }
+    enum FletchingType {  Plastic, TurkeyFeathers, GooseFeathers }
 
     public class Arrow
     {
         // class varibles
-        private string _arrowheadType;
-        private string _fletchingType;
-        private float _length;
+        private string arrowheadType = "n\a";
+        private string fletchingType = "n\a";
+        private float length = 0;
 
         public string ArrowheadType
         {
-            get { return _arrowheadType; }
-            set { _arrowheadType = value; }
+            get { return this.arrowheadType; }
+            set { this.arrowheadType = value; }
         }
 
         public string FletchingType
         {
-            get { return _fletchingType; }
-            set { _fletchingType = value; }
+            get { return this.fletchingType; }
+            set { this.fletchingType = value; }
         }
 
         public float Length
         {
-            get { return _length; }
+            get { return this.length; }
             set
             {
                 if (Length >= 60 && Length <= 100)
                 {
-                    _length = value;
+                    this.length = value;
                 }
-
-
+              
+                   
             }
         }
 
         //constructor
 
-        public Arrow(string arrowheadType, string fletchingType, float length)
+        public Arrow(string aArrowheadType, string aFletchingType, double aLength)
         {
-            _arrowheadType = arrowheadType;
-            _fletchingType = fletchingType;
-            _length = length;
+            this.arrowheadType = aArrowheadType;
+            this.fletchingType = aFletchingType;
+            this.length = aLength;
         }
 
         //method
         public float GetCost()
         {
-            float arrowheadCost = _arrowheadType switch
+            float arrowheadCost = arrowheadType switch
             {
-                _arrowheadType.Steel => 10,
-                _arrowheadType.Wood => 3,
-                _arrowheadType.Obsideian => 5,
+                ArrowheadType.Steel => 10,
+                ArrowheadType.Wood => 3,
+                ArrowheadType.Obsideian => 5,
+                
+            };
+            float fletchingCost = fletchingCost switch
+            {
+                FletchingType.Plastic => 10,
+                FletchingType.TurkeyFeathers => 5,
+                FletchingType.GooseFeathers => 3,
 
             };
-            float fletchingCost = _fletchingType switch
-            {
-                _fletchingType.Plastic => 10,
-                _fletchingType.TurkeyFeathers => 5,
-                _fletchingType.GooseFeathers => 3,
-
-            };
-            float shaftCost = _length * 0.05f;
+            float shaftCost = length * 0.05f;
 
             return arrowheadCost + fletchingCost + shaftCost;
 
